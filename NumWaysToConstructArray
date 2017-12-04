@@ -1,0 +1,44 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static long countArray(int n, int k, int x) {
+        
+        BigInteger K = new BigInteger(Integer.toString(k));
+        BigInteger M = new BigInteger(Integer.toString(k-1));
+        M=M.pow(n-1);
+        
+        if(n%2 == 0){
+            M=M.add(BigInteger.ONE);
+        }else{
+            M=M.subtract(BigInteger.ONE);
+        }
+        
+        M=M.divide(K);
+        
+        if(x==1){
+            if(n%2 == 0){
+            M=M.subtract(BigInteger.ONE);
+        }else{
+            M=M.add(BigInteger.ONE);
+        }
+        }
+        
+        
+        return T.mod(BigInteger.valueOf(1000000007);
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int k = in.nextInt();
+        int x = in.nextInt();
+        long answer = countArray(n, k, x);
+        System.out.println(answer);
+        in.close();
+    }
+}
